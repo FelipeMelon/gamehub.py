@@ -1,1 +1,1 @@
-worker node God.py
+worker: python God.py

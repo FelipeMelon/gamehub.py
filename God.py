@@ -84,4 +84,4 @@ async def on_member_join(member):
 
 
 
-client.run('NzAxODA5ODQwMTY2NjY2Mjky.Xp29kA.1X5UL466UUGnP5U_vmhBKxIEaNE')
+client.run(os.environ['Disc_Token'])
