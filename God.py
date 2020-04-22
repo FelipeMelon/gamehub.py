@@ -2,6 +2,7 @@ import discord
 import os
 import random
 import string
+import asyncio
 
 
 client = discord.Client()
@@ -53,18 +54,24 @@ async def on_message(message):
             if message.content == '!count':
               await message.channel.send(usersInServerCount)
 
+    if message.content.startswith('!giveaway'):
+     time = int(message.content[range(10, 17)])
+     channel = client.get_channel(646056568626085959)
+     await asyncio.sleep(time)
+     time = time/60
+     await message.channel.send(message.content[17:] + '\nGiveaway will take place for:' + time)
+     channel = None
+     await message.channel.send('All done.')
 
 
-    elif message.content.startswith('!countbots'):
-        membersInServer = message.guild.members
-        botsInServer = list(filter(filterOnlyBots, membersInServer))
 
-        botsInServerCount = len(botsInServer)
-        await message.channel.send(membersInServer)
 
-    # Filter the member list to only bots
-def filterOnlyBots(member):
-        return member.bot
+
+
+
+
+
+
 
 
 
@@ -79,6 +86,8 @@ async def on_member_join(member):
     except:
         print("Couldn't message " + member.name)
 
+def filterOnlyBots(member):
+        return member.bot
 
 
 
