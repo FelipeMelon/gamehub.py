@@ -3,6 +3,7 @@ import os
 import random
 import string
 import asyncio
+import time
 
 
 client = discord.Client()
@@ -55,13 +56,16 @@ async def on_message(message):
               await message.channel.send(usersInServerCount)
 
     if message.content.startswith('!giveaway'):
-     time = int(message.content[range(10, 17)])
-     channel = client.get_channel(646056568626085959)
-     await asyncio.sleep(time)
-     time = time/60
-     await message.channel.send(message.content[17:] + '\nGiveaway will take place for:' + time)
-     channel = None
-     await message.channel.send('All done.')
+      await message.channel.send('For how many hours?')
+        await message.content.startswith(int())
+        message.content = message.content * 3600
+        message.content = time
+        asyncio.sleep(time)
+         await message.channel.send('What do you give?')
+            await message.content.startswith('')
+                channel = client.get_channel(646056568626085959)
+                await channel.send(message.content)
+
 
 
 
