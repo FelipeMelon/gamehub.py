@@ -5,13 +5,26 @@ import string
 import asyncio
 import time
 
-
-client = discord.Client()
+client = commands.Bot(command_prefix = '!')
 
 @client.event
 async def on_ready():
     print('We have logged in as {0.user}'.format(client))
 
+'''
+@client.command(aliases=['owner', 'spam'])
+async def spamrundie(ctx):
+    await ctx.send(f'Spamrundie is the best!')
+
+@client.command():
+async def poll(ctx):
+    channel = client.get_channel(701806262844653678)
+    await channel.send(message.content[5:])
+
+    if(message.channel.id == 701806262844653678):
+        await.await message.add_reaction("✅")
+        await message.add_reaction('❌')
+'''
 
 @client.event
 
@@ -57,19 +70,15 @@ async def on_message(message):
 
     if message.content.startswith('!giveaway'):
       await message.channel.send('For how many hours?')
-        
-
-
-
-
-
-
-
-
-
-
-
-
+        if message.content.startswith(int()):
+            message.content = time
+            time = time * 3600
+            asyncio.sleep(time)
+          await message.channel.send('What do you give?')
+            if message.content.startswith(''):
+                channel = client.get_channel(646056568626085959)
+                await message.channel.send(message.content)
+                await message.channel.add_reaction('✅')
 
 
 async def on_member_join(member):
@@ -83,7 +92,6 @@ async def on_member_join(member):
 
 def filterOnlyBots(member):
         return member.bot
-
 
 
 
