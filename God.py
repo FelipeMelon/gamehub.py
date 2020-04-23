@@ -27,7 +27,7 @@ async def poll(ctx):
     await channel.send(message.content[5:])
 
     if(message.channel.id == 701806262844653678):
-        await.await message.add_reaction("✅")
+        await message.add_reaction("✅")
         await message.add_reaction('❌')
 
 @client.event
