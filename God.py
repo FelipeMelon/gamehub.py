@@ -57,16 +57,7 @@ async def on_message(message):
 
     if message.content.startswith('!giveaway'):
       await message.channel.send('For how many hours?')
-        await message.content.startswith(int())
-        message.content = message.content * 3600
-        message.content = time
-        asyncio.sleep(time)
-         await message.channel.send('What do you give?')
-            await message.content.startswith('')
-                channel = client.get_channel(646056568626085959)
-                await channel.send(message.content)
-
-
+        
 
 
 
